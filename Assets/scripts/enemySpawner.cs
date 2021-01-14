@@ -12,6 +12,11 @@ public class enemySpawner : MonoBehaviour
     private float x;
     private float y;
     private List<GameObject> enemylist = new List<GameObject>();
+    public float speed;
+    public GameObject laser;
+    public float fireRate;
+    
+
 
 
 
@@ -38,11 +43,27 @@ public class enemySpawner : MonoBehaviour
         }
         }
 
+       // InvokeRepeating("MoveEnemy", 0.1f, 0.1f);
+
     }
 
+    void MoveEnemy()
+    {
+    }
     // Update is called once per frame
     void Update()
     {
         
+        spawnzone.position += Vector3.right * speed;
+
+        foreach (Transform enemy in spawnzone)
+        {
+            if (enemy.position.x < -9.5 || enemy.position.x > 9.5)
+            {
+                speed = -speed;
+                spawnzone.position += Vector3.down * 0.5f;
+                return;
+            }
+        }
     }
 }
