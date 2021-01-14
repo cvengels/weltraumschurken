@@ -22,6 +22,16 @@ public class laserController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "enemy")
+        {
+            Destroy(gameObject);
+            Destroy(collider.transform.parent.gameObject);
+            // add points
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
