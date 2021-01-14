@@ -345,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018956494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -369,8 +369,11 @@ MonoBehaviour:
   - {fileID: 8465917917689478861, guid: a5864c7fa78e72743b34040c614b5fa8, type: 3}
   - {fileID: 3181260443416559930, guid: a089afd31c64822429b185ec5c030746, type: 3}
   - {fileID: 2076860086957580139, guid: f3a5efc0bc080bc4cbfa820a97533c65, type: 3}
-  coloumn: 12
-  row: 4
+  coloumncount: 12
+  rowcount: 5
+  speed: 0.01
+  laser: {fileID: 0}
+  fireRate: 0
 --- !u!1001 &9142945902356601905
 PrefabInstance:
   m_ObjectHideFlags: 0
