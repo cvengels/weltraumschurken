@@ -7,14 +7,19 @@ public class enemySpawner : MonoBehaviour
 
     private Transform spawnzone;
     public GameObject[] enemyPrefabs;
-    public int coloumn;
-    public int row;
+    public int coloumncount;
+    public int rowcount;
     private float x;
     private float y;
     private List<GameObject> enemylist = new List<GameObject>();
     public float speed;
     public GameObject laser;
     public float fireRate;
+    public GameObject[,] enemy;
+    private int row = 0;
+    private int coloumn = 0;
+
+
     
 
 
@@ -24,34 +29,33 @@ public class enemySpawner : MonoBehaviour
     void Start()
     {
         spawnzone = GetComponent<Transform> ();
-        x = spawnzone.position.x;
-        y = spawnzone.position.y;
+        enemy = new GameObject[rowcount, coloumncount];
         
-        for (y = spawnzone.position.y -(row/2); y < spawnzone.position.y + (row / 2); y ++)
+        for (y = spawnzone.position.y -(rowcount/2); y < spawnzone.position.y + (rowcount / 2); y ++)
+        {
+            
+
+
+        for (x = spawnzone.position.x - (coloumncount / 2); x < spawnzone.position.x + (coloumncount / 2); x += 1)
         {
 
-        for (x = spawnzone.position.x - (coloumn / 2); x < spawnzone.position.x + (coloumn / 2); x += 1)
-        {
-
-                GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, 4)], new Vector2(x, y), Quaternion.identity, transform);
-                enemy.name = "Enemy" + x + "," + y;
-
-    
-               enemylist.Add(enemy);
+                
+                enemy[row,coloumn] = Instantiate(enemyPrefabs[Random.Range(0, 4)], new Vector2(x, y), Quaternion.identity, transform);
+                enemy[row,coloumn].name = "Enemy" + row + "," + coloumn;
+                
+                coloumn++;
 
 
         }
+            coloumn = 0;
+            row++;
         }
 
-       // InvokeRepeating("MoveEnemy", 0.1f, 0.1f);
+     
 
     }
 
-    void MoveEnemy()
-    {
-    }
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         spawnzone.position += Vector3.right * speed;
