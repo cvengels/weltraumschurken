@@ -7,10 +7,12 @@ public class enemySpawner : MonoBehaviour
 
     private Transform spawnzone;
     public GameObject[] enemyPrefabs;
-    public int maxspawn;
+    public int coloumn;
+    public int row;
     private float x;
     private float y;
-    
+    private List<GameObject> enemylist = new List<GameObject>();
+
 
 
     // Start is called before the first frame update
@@ -20,14 +22,20 @@ public class enemySpawner : MonoBehaviour
         x = spawnzone.position.x;
         y = spawnzone.position.y;
         
-
-        for (x = spawnzone.position.x - (maxspawn / 2); x <= spawnzone.position.x + (maxspawn / 2); x += 1)
+        for (y = spawnzone.position.y -(row/2); y < spawnzone.position.y + (row / 2); y ++)
         {
-            
-            
-            Instantiate(enemyPrefabs[Random.Range(0,4)], new Vector2(x, y), Quaternion.identity);
+
+        for (x = spawnzone.position.x - (coloumn / 2); x < spawnzone.position.x + (coloumn / 2); x += 1)
+        {
+
+                GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, 4)], new Vector2(x, y), Quaternion.identity, transform);
+                enemy.name = "Enemy" + x + "," + y;
+
+    
+               enemylist.Add(enemy);
 
 
+        }
         }
 
     }
