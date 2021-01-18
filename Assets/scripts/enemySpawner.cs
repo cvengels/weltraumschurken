@@ -50,7 +50,7 @@ public class enemySpawner : MonoBehaviour
             coloumn = 0;
             row++;
         }
-
+        // kommentar
      
 
     }
