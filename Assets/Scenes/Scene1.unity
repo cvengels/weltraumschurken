@@ -373,7 +373,7 @@ MonoBehaviour:
   rowcount: 5
   speed: 0.01
   laser: {fileID: 0}
-  fireRate: 0
+  firerate: 3
 --- !u!1001 &9142945902356601905
 PrefabInstance:
   m_ObjectHideFlags: 0
