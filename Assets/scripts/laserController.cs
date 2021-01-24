@@ -26,6 +26,8 @@ public class laserController : MonoBehaviour
     {
         if (collider.gameObject.tag == "enemy")
         {
+            
+            
             Destroy(gameObject);
             Destroy(collider.transform.parent.gameObject);
             // add points

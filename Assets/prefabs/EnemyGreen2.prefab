@@ -67,6 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165279013663322097}
   - component: {fileID: 5990327384987239133}
+  - component: {fileID: -1400913543714038}
   m_Layer: 0
   m_Name: EnemyGreen2
   m_TagString: enemy
@@ -111,6 +112,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &-1400913543714038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300736723209293034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17720e555ddf6744087662af47c64817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 199909842411508432, guid: aad3e7758b4cc32408afa0b1c0642c26, type: 3}
 --- !u!1 &7142180849912669809
 GameObject:
   m_ObjectHideFlags: 0
