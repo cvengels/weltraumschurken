@@ -35,8 +35,9 @@ public class enemySpawner : MonoBehaviour
             
 
 
-        for (x = spawnzone.position.x - ((float)coloumncount / 2); x < spawnzone.position.x + (coloumncount / 2); x ++)
-        {
+            for (x = spawnzone.position.x - ((float)coloumncount / 2); x < spawnzone.position.x + (coloumncount / 2); x ++)
+            {
+
 
                 
                 enemy[row,coloumn] = Instantiate(enemyPrefabs[Random.Range(0, 4)], new Vector2(x, y), Quaternion.identity, transform);
@@ -49,7 +50,7 @@ public class enemySpawner : MonoBehaviour
                 coloumn++;
 
 
-        }
+            }
             coloumn = 0;
             row++;
             
@@ -63,7 +64,11 @@ public class enemySpawner : MonoBehaviour
 
     }
     
-
+                /// <summary>
+                /// allows next enemy in coloumn to shoot
+                /// </summary>
+                /// <param name="_row"></param>
+                /// <param name="_coloumn"></param>
     public void enemyShot(int _row, int _coloumn)
     {
         if (_row < rowcount)
