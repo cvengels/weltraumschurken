@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyShotController : MonoBehaviour
 {
     Rigidbody2D shot;
-    public float speed;
+    public float speed = 5f;
     // Start is called before the first frame update
     void Start()
     {

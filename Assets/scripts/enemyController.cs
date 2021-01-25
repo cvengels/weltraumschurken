@@ -50,15 +50,15 @@ public class enemyController : MonoBehaviour
     public void fire()
     {
         firerate = Time.time + firerate;
-        enemy.transform.parent.GetComponent<enemySpawner>().setFirerate(firerate);
-        Instantiate(shot, new Vector3(transform.position.x, transform.position.y - 0.6f, 0), Quaternion.identity, transform);
+        // enemy.transform.parent.GetComponent<enemySpawner>().setFirerate(firerate);
+        Instantiate(shot, new Vector3(transform.position.x, transform.position.y - 0.6f, 0), Quaternion.identity);
     }
   
 
     // Update is called once per frame
     void Update()
     {
-        firerate = enemy.transform.parent.GetComponent<enemySpawner>().getFirerate();
+        // firerate = enemy.transform.parent.GetComponent<enemySpawner>().getFirerate();
         if (canShoot && Time.time > firerate)
         {
 
